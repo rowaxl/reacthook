@@ -5,15 +5,20 @@ class ResourceList extends React.Component {
     state = { resources: [] };
 
     componentDidMount = async () => {
-        // const response = await axios.get(`${this.props.resource}`);
-        const client = axios.create({ baseURL: 'https://jsonplaceholder.com/' });
-        const response = await client.get(this.props.resource);
-        this.setState({ resource: response.data });
+        const response = await axios.get(`https://jsonplaceholder.typicode.com/${this.props.resource}`);
+        this.setState({ resources: response.data });
     }
 
     render() {
         return (
-            <div>{this.state.resources}</div>
+            <div>
+                {this.state.resources.map(resource => 
+                    <div key={resource.id}>
+                        <h2>{resource.title}</h2>
+                        <p>{resource.body}</p>
+                    </div>
+                )}
+            </div>
         );
     }
 };
