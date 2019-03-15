@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 
 const App = () => {
     const [resource, setResource] = useState('posts');
