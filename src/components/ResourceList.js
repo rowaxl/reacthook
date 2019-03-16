@@ -22,13 +22,13 @@ const ResourceList = ({resource}) => {
     );
 
     return (
-        <div>
+        <ul>
             {resources.map(value => 
-                <div key={value.id}>
+                <li key={value.id}>
                     <h2>{value.title}</h2>
-                </div>
+                </li>
             )}
-        </div>
+        </ul>
     );
 };
 
