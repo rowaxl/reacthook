@@ -11,6 +11,12 @@ const ResourceList = ({resource}) => {
 
     useEffect(() => {
         fetchUpdate(resource);
+
+        // or, this can works
+        // (async resource => {
+        //     const response = await axios.get(`https://jsonplaceholder.typicode.com/${resource}`);
+        //     setResources(response.data)
+        // })(resource);
     },
         [resource] // if this value changed, useEffect will be called
     );
