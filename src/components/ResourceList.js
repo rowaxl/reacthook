@@ -10,9 +10,10 @@ const ResourceList = ({resource}) => {
     }
 
     useEffect(() => {
-        console.log('useEffect');
         fetchUpdate(resource);
-    }, []);
+    },
+        [resource] // if this value changed, useEffect will be called
+    );
 
     return (
         <div>
